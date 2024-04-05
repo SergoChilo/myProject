@@ -6,25 +6,165 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1220</width>
+    <height>773</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="myButton">
+   <widget class="QPushButton" name="exit_app">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>220</y>
+      <x>1020</x>
+      <y>660</y>
       <width>89</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>Test button</string>
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>310</y>
+      <width>471</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>With Linear Regression model the error equal 13%</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>31</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>87</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>250</y>
+      <width>714</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>% probability that tomorrow the dollar exchange rate will increase by 10 drams</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>110</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Choose method predicting</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Linear Regression</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Polinomial Linear Regression</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Decision Tree</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>271</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Select exchange</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>USD to AUD</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>USD to RUB</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>USD to AMD</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="countButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>190</y>
+      <width>221</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start counting</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="showGraphButton">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>190</y>
+      <width>151</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show Graphic</string>
     </property>
    </widget>
   </widget>
@@ -33,10 +173,34 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1220</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
