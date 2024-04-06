@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets, uic
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QDialog, QMessageBox
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -26,39 +26,44 @@ class MyWindow(QMainWindow):
         self.exchangeBox1.activated[str].connect(self.onChanged1)
         self.exchangeBox2.activated[str].connect(self.onChanged2)
 
-        # global value1, value2
-        #
-        # value1 = self.onChanged1(self.exchangeBox1.currentText())
-        # value2 = self.onChanged2(self.exchangeBox2.currentText())
+
 
         ### Functional of buttons ================================================
-        # print(value1)
-        # print(value2)
+
     def button_clicked(self):
         exit()
-
     def onChanged1(self, text):
-        print(text)
-
+        pass
     def onChanged2(self, text):
-        print(text)
+        pass
 
 
     def buildModel(self):
         value1 = self.exchangeBox1.currentText()
         value2 = self.exchangeBox2.currentText()
-        if value1 != value2:
-
+        if value1 == "AUD" and value2 == "AMD":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Warning)
+            msg.setWindowTitle("WARNING!!!")
+            msg.setText("We don't have this data yet")
+            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+            retval = msg.exec_()
+        elif value1 != value2:
             dataset = pd.read_csv(f'Sources/{value1}_{value2} Historical Data.csv')
-
             plt.scatter(dataset["Date"], dataset["Price"], color='red')
-            plt.title('Changing AMD to USD')
+            plt.title(f'Changing {value1} to {value2}')
             plt.xlabel('Data')
-            plt.ylabel('AMD')
+            plt.ylabel(f'{value1}')
             self.buildButton.setText("Done")
             self.showGraphButton.show()
-        else:
-            pass
+
+        elif value1 == value2:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Warning)
+            msg.setWindowTitle("WARNING!!!")
+            msg.setText("You can't use same value")
+            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+            retval = msg.exec_()
     def paintMyGraphic(self):
         plt.show()
         self.showGraphButton.hide()
